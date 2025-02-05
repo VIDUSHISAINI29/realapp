@@ -1,12 +1,8 @@
 "use client"
 import React from 'react';
-// import { Form } from "react-router-dom";
-
-import SearchFormReset from '@/app/components/SearchFormReset';
+import SearchFormReset from '@/components/SearchFormReset';
+import {Search} from "lucide-react"
 const SearchForm = ({query}: {query?: string}) => {
-    
-
-   
     return(
         <form   action="/"  className="search-form">
             
@@ -17,7 +13,9 @@ const SearchForm = ({query}: {query?: string}) => {
             placeholder='Search Startups' />
             <div className='flex gap-2'>
         { query && (<SearchFormReset  />)}
-        <button className='search-btn text-white' type='submit'>S</button>
+        <button className='search-btn text-white' type='submit'>
+            <Search className="size-5"/>
+        </button>
             </div>
         </form>
     )

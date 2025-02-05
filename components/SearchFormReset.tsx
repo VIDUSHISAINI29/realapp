@@ -1,4 +1,6 @@
 "use client"
+import Link from "next/link";
+import {X} from "lucide-react"
 const SearchFormReset = () => {
     const reset = () => {
         const form = document.querySelector('.search-form') as HTMLFormElement
@@ -7,8 +9,10 @@ const SearchFormReset = () => {
     return (
         <div>
             <button type='reset' onClick={reset}>
-
-</button>
+                <Link href="/" className="search-btn text-white">
+                <X className="size-5"/>
+                </Link>
+            </button>
         </div>
     )
 }
