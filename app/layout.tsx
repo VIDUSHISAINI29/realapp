@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import "easymde/dist/easymde.min.css"
 import path from "path";
 import localFont from "next/font/local";
 

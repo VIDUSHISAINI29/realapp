@@ -133,7 +133,7 @@
 
   /* startupcard */
   .startup-card {
-    @apply bg-white border-[5px] border-black py-6 px-5 rounded-[22px]  hover:border-primary transition-all duration-500  ;
+    @apply bg-white border-l-[3px] border-t-[3px] border-b-[7px] border-r-[7px] border-black py-6 px-5 rounded-[22px]  hover:border-secondGradient hover:bg-secondGradient hover:bg-opacity-20 transition-all duration-500  ;
   }
 
   .startup-card_date {
@@ -141,7 +141,7 @@
   }
 
   .startup-card_desc {
-    @apply font-normal text-[16px] line-clamp-2 my-3 text-black-100 break-all;
+    @apply font-normal text-[16px] line-clamp-2 my-3 text-black break-all;
   }
 
   .startup-card_img {
@@ -149,7 +149,7 @@
   }
 
   .startup-card_btn {
-    @apply rounded-full bg-black-200 font-medium text-[16px] text-white px-5 py-3 !important;
+    @apply rounded-full bg-black  font-medium text-[16px] text-white px-5 py-3 !important;
   }
 
   .startup-card_skeleton {
