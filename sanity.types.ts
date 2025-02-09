@@ -172,8 +172,28 @@ export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ./sanity/lib/queries.ts
 // Variable: startups_query
-// Query: *[_type == "startup" && defined(slug.current)] | order(_createdAt desc){  _id,    author -> {      _id, image, bio, name     },    category,    title,    views,    description,    image,    slug,    _createdAt, }
+// Query: *[_type == "startup" && defined(slug.current) && !defined($search) || title match $search || category match $search || author -> name match $search ] | order(_createdAt desc){  _id,    author -> {      _id, image, bio, name     },    category,    title,    views,    description,    image,    slug,    _createdAt, }
 export type Startups_queryResult = Array<{
+  _id: string;
+  author: null;
+  category: null;
+  title: null;
+  views: null;
+  description: null;
+  image: string | null;
+  slug: null;
+  _createdAt: string;
+} | {
+  _id: string;
+  author: null;
+  category: null;
+  title: string | null;
+  views: null;
+  description: string | null;
+  image: null;
+  slug: null;
+  _createdAt: string;
+} | {
   _id: string;
   author: {
     _id: string;
@@ -194,6 +214,6 @@ export type Startups_queryResult = Array<{
 import "@sanity/client";
 declare module "@sanity/client" {
   interface SanityQueries {
-    "*[_type == \"startup\" && defined(slug.current)] | order(_createdAt desc){\n  _id,\n    author -> {\n      _id, image, bio, name \n    },\n    category,\n    title,\n    views,\n    description,\n    image,\n    slug,\n    _createdAt, \n}\n    ": Startups_queryResult;
+    "*[_type == \"startup\" && defined(slug.current) && !defined($search) || title match $search || category match $search || author -> name match $search ] | order(_createdAt desc){\n  _id,\n    author -> {\n      _id, image, bio, name \n    },\n    category,\n    title,\n    views,\n    description,\n    image,\n    slug,\n    _createdAt, \n}\n    ": Startups_queryResult;
   }
 }
