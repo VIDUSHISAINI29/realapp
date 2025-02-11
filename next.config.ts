@@ -8,10 +8,9 @@ const nextConfig: NextConfig = {
     hostname: '*',
   }]
  },
-//  experimental: {
-//   ppr: "incremental",
-//   // ppr:true,
-// },
+ experimental: {
+  ppr: true
+},
 devIndicators: {
   appIsrStatus: true,
   buildActivity: true,
